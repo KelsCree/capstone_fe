@@ -111,7 +111,7 @@ export default function CandidateBio ({ id, setBioVisible, addLike }) {
             </View>
           </Collapsible>
         </>
-       : null }
+        : null }
       {candidateInfo.bio.election ?
           <>
             <TouchableOpacity onPress={() => setIsElectionCollapsed(!isElectionCollapsed)}>
@@ -124,9 +124,18 @@ export default function CandidateBio ({ id, setBioVisible, addLike }) {
               </View>
             </TouchableOpacity>
               <Collapsible collapsed={isElectionCollapsed}>
-              <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Office:</Text><Text style={styles.info}>{candidateInfo.bio.election.office} </Text></View>
-              <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Party:</Text><Text style={styles.info}>{candidateInfo.bio.election.parties} </Text></View>
-              <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Status:</Text><Text style={styles.info}> {candidateInfo.bio.election.status} </Text></View>
+              <View style={{flexDirection:'row'}}>
+                <Text style={styles.infoTitle}>Office:</Text>
+                <Text style={styles.info}>{candidateInfo.bio.election.office}</Text>
+              </View>
+              <View style={{flexDirection:'row'}}>
+                <Text style={styles.infoTitle}>Party:</Text>
+                <Text style={styles.info}>{candidateInfo.bio.election.parties}</Text>
+              </View>
+              <View style={{flexDirection:'row'}}>
+                <Text style={styles.infoTitle}>Status:</Text>
+                <Text style={styles.info}> {candidateInfo.bio.election.status}</Text>
+              </View>
             </Collapsible>
           </>
       : null }
@@ -140,10 +149,23 @@ export default function CandidateBio ({ id, setBioVisible, addLike }) {
         </View>
       </TouchableOpacity>
         <Collapsible collapsed={isPersonalCollapsed}>
-          <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Birthdate:</Text><Text style={styles.info}> {candidateInfo.bio.candidate.birthDate}</Text></View>
-          <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Family:</Text><Text style={styles.info}> {candidateInfo.bio.candidate.family}</Text></View>
-          <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Hometown:</Text><Text style={styles.info}>{candidateInfo.bio.candidate.homeCity}, {candidateInfo.bio.candidate.homeState}</Text></View>
-          <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Religion:</Text><Text style={styles.info}>{candidateInfo.bio.candidate.religion}</Text></View>
+          <View style={{flexDirection:'row'}}>
+            <Text style={styles.infoTitle}>Birthdate:</Text>
+            <Text style={styles.info}> {candidateInfo.bio.candidate.birthDate}</Text>
+          </View>
+          <View style={{flexDirection:'row'}}>
+            <Text style={styles.infoTitle}>Family:</Text>
+            <Text style={styles.info}> {candidateInfo.bio.candidate.family}</Text>
+          </View>
+          <View style={{flexDirection:'row'}}>
+            <Text style={styles.infoTitle}>Hometown:</Text>
+            <Text style={styles.info}>{candidateInfo.bio.candidate.homeCity}, 
+            {candidateInfo.bio.candidate.homeState}</Text>
+          </View>
+          <View style={{flexDirection:'row'}}>
+            <Text style={styles.infoTitle}>Religion:</Text>
+            <Text style={styles.info}>{candidateInfo.bio.candidate.religion}</Text>
+          </View>
         </Collapsible>
         </ScrollView>
       </SafeAreaView>
