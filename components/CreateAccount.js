@@ -12,7 +12,7 @@ export default function CreateAccount({ signup, alerts, login }) {
   const [loginScreen, setLoginScreen] = useState(false)
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = () => {
     let user = {
       username,
       password
