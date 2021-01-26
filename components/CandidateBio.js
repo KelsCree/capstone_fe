@@ -1,14 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { Component, useState, useEffect, useRef } from 'react';
-import { View, TextInput, StyleSheet, Text, Button, Image, SafeAreaView, ScrollView, Animated, Modal } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { View, StyleSheet, Text, Button, Image, SafeAreaView, ScrollView } from 'react-native';
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faChevronLeft, faHome, faBriefcase, faVoteYea, faThumbsDown, faThumbsUp, faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft, faHome, faBriefcase, faVoteYea, faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import Collapsible from 'react-native-collapsible';
 import LottieView from 'lottie-react-native';
-
-
 
 
 export default function CandidateBio ({ id, user, setBioVisible, addLike }) {
