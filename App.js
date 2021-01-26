@@ -91,12 +91,14 @@ export default function App({ navigation }) {
         headerTitle: () => 
         <View style={{flex: 1, flexDirection: 'row'}}>
             <Image 
-              style={{ width: scale(115), height: scale(105), alignSelf: 'center', marginBottom: scale(5)}}
+              style={{ width: scale(115),
+                height: scale(105),
+                alignSelf: 'center',
+                marginBottom: scale(5)}}
               source = { require('./logo.png') }
               />
         </View>,
         }}
-
       >
       <Stack.Screen 
         name='Home'
