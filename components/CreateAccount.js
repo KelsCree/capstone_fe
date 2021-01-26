@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { View, TextInput, StyleSheet, Text, Button, ImageBackground } from 'react-native'
+import React, { useState } from 'react'
+import { View, TextInput, StyleSheet, Text, ImageBackground } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faUser, faUnlockAlt } from '@fortawesome/free-solid-svg-icons'
 
