@@ -30,7 +30,7 @@ export default function App({ navigation }) {
     })
       .then(response => response.json())
       .then(data => {
-        if(data.errors) {
+        if (data.errors) {
           setAlerts(data.errors)
         } else {
           AsyncStorage.setItem('token', data.token)
@@ -44,7 +44,6 @@ export default function App({ navigation }) {
     setUser({})
     AsyncStorage.removeItem('token')
   }
-
 
   const addLike = (id) => {
     let user_id = user.id
@@ -72,7 +71,7 @@ export default function App({ navigation }) {
     })
       .then(response => response.json())
       .then(data => {
-        if(data.errors) {
+        if (data.errors) {
           setAlerts(data.errors)
         } else {
           AsyncStorage.setItem('token', data.token)
@@ -84,11 +83,7 @@ export default function App({ navigation }) {
       })
   }
 
-  console.log(user, 'liked candidates', likedCandidates, 'disliked candidaes', dislikedCandidates)
-
   return (
-    <>
-
     <NavigationContainer>
       <Stack.Navigator
       screenOptions={{
@@ -138,7 +133,6 @@ export default function App({ navigation }) {
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
-    </>
   );
 }
 
