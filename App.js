@@ -1,17 +1,12 @@
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { NavigationContainer, useNavigation, withNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet, Text, View, Button, Image, Modal } from 'react-native';
-import CreateAccount from './components/CreateAccount';
+import { StyleSheet, View, Image } from 'react-native';
 import Home from './components/Home';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { scale } from 'react-native-size-matters';
 import Profile from './components/Profile';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import LottieView from 'lottie-react-native';
 import { LogBox } from 'react-native';
 
 const Stack = createStackNavigator();
