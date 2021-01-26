@@ -8,17 +8,16 @@ import Collapsible from 'react-native-collapsible';
 import LottieView from 'lottie-react-native';
 
 
-export default function CandidateBio ({ id, user, setBioVisible, addLike }) {
+export default function CandidateBio ({ id, setBioVisible, addLike }) {
 
   const animation = useRef(null)
   const animation2 = useRef(null)
+  const baseURL = 'http://localhost:3000'
 
   const [candidateInfo, setCandidateInfo] = useState({})
   const [isOfficeCollapsed, setIsOfficeCollapsed] = useState(true)
   const [isPersonalCollapsed, setIsPersonalCollapsed] = useState(true)
   const [isElectionCollapsed, setIsElectionCollapsed] = useState(true)
-
-  const baseURL = 'http://localhost:3000'
   const [justLiked, setJustLiked] = useState(false)
   const [justDisliked, setJustDisliked] = useState(false)
 
@@ -28,15 +27,12 @@ export default function CandidateBio ({ id, user, setBioVisible, addLike }) {
       .then((results) => setCandidateInfo(results))
   }, [])
 
-
   const handleLike = () => {
     addLike(id)
-    console.log('like handled')
   }
 
   const handleDislike = () => {
     addDislike(id)
-
   }
 
   const renderBio = (candidateInfo) => {
@@ -93,11 +89,26 @@ export default function CandidateBio ({ id, user, setBioVisible, addLike }) {
           </View>
         </TouchableOpacity>
           <Collapsible collapsed={isOfficeCollapsed}>
-            <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Title:</Text><Text style={styles.info}> {candidateInfo.bio.office.title} - {candidateInfo.bio.office.type} </Text></View>
-            <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>District:</Text><Text style={styles.info}> {candidateInfo.bio.office.district} </Text></View>
-            <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Party:</Text><Text style={styles.info}>{candidateInfo.bio.office.parties} </Text></View>
-            <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Status:</Text><Text style={styles.info}> {candidateInfo.bio.office.status} </Text></View>
-            <View style={{flexDirection:'row'}}><Text style={styles.infoTitle}>Last Elected:</Text><Text style={styles.info}> {candidateInfo.bio.office.lastElect} </Text></View>
+            <View style={{flexDirection:'row'}}>
+              <Text style={styles.infoTitle}>Title:</Text>
+              <Text style={styles.info}>{candidateInfo.bio.office.title} - {candidateInfo.bio.office.type}</Text>
+            </View>
+            <View style={{flexDirection:'row'}}>
+              <Text style={styles.infoTitle}>District:</Text>
+              <Text style={styles.info}> {candidateInfo.bio.office.district}</Text>
+            </View>
+            <View style={{flexDirection:'row'}}>
+              <Text style={styles.infoTitle}>Party:</Text>
+              <Text style={styles.info}>{candidateInfo.bio.office.parties}</Text>
+            </View>
+            <View style={{flexDirection:'row'}}>
+              <Text style={styles.infoTitle}>Status:</Text>
+              <Text style={styles.info}>{candidateInfo.bio.office.status}</Text>
+            </View>
+            <View style={{flexDirection:'row'}}>
+              <Text style={styles.infoTitle}>Last Elected:</Text>
+              <Text style={styles.info}>{candidateInfo.bio.office.lastElect}</Text>
+            </View>
           </Collapsible>
         </>
        : null }
@@ -196,8 +207,6 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: scale(17),
     fontWeight: 'bold',
-    // padding: scale(3),
-    // margin: scale(5),
     color: '#457B9D',
     textAlign: 'left'
   },
