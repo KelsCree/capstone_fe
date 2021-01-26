@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faUser, faUnlockAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default function CreateAccount({ signup, alerts, login }) {
+
   const baseURL = 'http://localhost:3000'
   const [username, setUserName] = useState('')
   const [password, setPassword] = useState('')
   const [loginScreen, setLoginScreen] = useState(false)
-
 
   const handleSubmit = () => {
     let user = {
@@ -27,7 +27,6 @@ export default function CreateAccount({ signup, alerts, login }) {
   const handleLoginForm = () => {
     setLoginScreen(!loginScreen)
   }
-
 
   const showAlerts = () => alerts.map(alert => <Text style={styles.alert}>{alert}</Text>)
 
@@ -144,11 +143,6 @@ const styles = StyleSheet.create({
     },
     form: {
       alignItems: 'center',
-      // justifyContent: 'center',
-      // margin: scale(5),
-      // shadowOffset:{  width: 10,  height: 10,  },
-      // shadowColor: '#1D3557',
-      // shadowOpacity: scale(.5),
       margin: scale(8)
     },
     icon: {
