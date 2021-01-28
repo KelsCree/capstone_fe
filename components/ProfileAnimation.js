@@ -1,10 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import LottieView from 'lottie-react-native';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { StyleSheet } from 'react-native';
+import { scale } from 'react-native-size-matters';
 
 export default function ProfileAnimation(){
-
 
   return(
     <LottieView
@@ -20,6 +19,5 @@ const styles = StyleSheet.create({
   profilepic: {
     width: scale(70),
     alignSelf: 'center',
-    
   }
 })
