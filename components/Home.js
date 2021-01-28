@@ -10,8 +10,7 @@ import ViewElections from './ViewElections';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faPersonBooth, faBullhorn, faFlagUsa, faUserCircle, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import Profile from './Profile';
+import { scale } from 'react-native-size-matters';
 
 const Tab = createBottomTabNavigator();
 
@@ -100,7 +99,7 @@ export default function Home({ addLike, alerts, login, navigation, user, signup,
         <Tab.Screen name="Elections"
           options={{ tabBarIcon: ({ focused }) => (
             <FontAwesomeIcon icon={ faPersonBooth } size={scale(22)} color={ focused ? '#A8DADC': '#FFFFFF'}/>)}}>
-               {(props) => <ViewElections
+              {(props) => <ViewElections
               user={user}
               addLike={addLike}
               alerts={alerts}
@@ -121,9 +120,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: scale(3)
-  },
-  icon: {
-    // margin: scale(-1)
   },
   login: {
     paddingBottom: scale(5)
