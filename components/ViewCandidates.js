@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, Text, Button, FlatList, SafeAreaView, ScrollView } from 'react-native';
+import { View, TextInput, StyleSheet, Text, FlatList, SafeAreaView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 import CandidateBio from './CandidateBio';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -16,8 +15,7 @@ export default function ViewCandidates({ addLike, user }) {
   const [bioVisible, setBioVisible] = useState(false)
   const baseURL = 'http://localhost:3000'
 
-  const Item = ({ item, onPress, style }) => (
-
+  const Item = ({ item }) => (
     <TouchableOpacity
     style={styles.item}
     key={item.id}
@@ -39,7 +37,7 @@ export default function ViewCandidates({ addLike, user }) {
     )
   }
 
-  const getCandidates = (event, zipCode5, zipCode4) => {
+  const getCandidates = (zipCode5, zipCode4) => {
     (zipCode4 ? 
     fetch(`${baseURL}/candidates/zipfull/${zipCode5}/${zipCode4}`) :
     fetch(`${baseURL}/candidates/zip/${zipCode5}`))
