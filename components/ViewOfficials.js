@@ -1,14 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, Text, Button, FlatList, Modal, SafeAreaView, ScrollView } from 'react-native';
+import { View, TextInput, StyleSheet, Text, FlatList, SafeAreaView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 import CandidateBio from './CandidateBio';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function ViewOfficials({ navigation, addLike, user  }) {
+export default function ViewOfficials({ addLike, user  }) {
 
   const [zipCode5, setZipCode5] = useState()
   const [zipCode4, setZipCode4] = useState()
@@ -18,7 +17,7 @@ export default function ViewOfficials({ navigation, addLike, user  }) {
 
   const baseURL = 'http://localhost:3000'
 
-  const Item = ({ item, onPress, style }) => (
+  const Item = ({ item }) => (
     <TouchableOpacity
       style={styles.item}
       key={item.id}
@@ -34,7 +33,6 @@ export default function ViewOfficials({ navigation, addLike, user  }) {
     setCandidateId(item.candidateId)
     setBioVisible(true)
   }
-
 
   const renderItem = ({item}) => {
     return(
