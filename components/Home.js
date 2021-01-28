@@ -1,8 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect, useLayoutEffect } from 'react';
-import { StyleSheet, Text, View, Button, Modal } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import CreateAccount from './CreateAccount';
 import ViewCandidates from './ViewCandidates';
 import ViewOfficials from './ViewOfficials';
