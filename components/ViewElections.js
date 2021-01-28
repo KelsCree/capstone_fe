@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, Text, Button, FlatList, SafeAreaView, ScrollView } from 'react-native';
+import { View, TextInput, StyleSheet, Text, FlatList, SafeAreaView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -13,8 +12,7 @@ export default function ViewElections() {
   const [electionList, setElectionList] = useState([])
   const baseURL = 'http://localhost:3000'
 
-  const Item = ({ item, onPress, style }) => (
-
+  const Item = ({ item }) => (
     <TouchableOpacity style={styles.item}>
       <Text style={styles.ballotName}>{item.name}</Text>
       <Text style={styles.info}>Election Year: {item.electionYear}</Text>
@@ -27,7 +25,7 @@ export default function ViewElections() {
     )
   }
 
-  const getElections = (event, zipCode5, zipCode4) => {
+  const getElections = (zipCode5, zipCode4) => {
     (zipCode4 ? 
     fetch(`${baseURL}/elections/zipfull/${zipCode5}/${zipCode4}`) :
     fetch(`${baseURL}/elections/zip/${zipCode5}`))
